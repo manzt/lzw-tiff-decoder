@@ -1,0 +1,30 @@
+{
+  "name": "lzw-tiff-decoder",
+  "version": "0.0.1",
+  "author": "Trevor James Manz",
+  "license": "MIT",
+  "description": "WASM LZW decoder for TIFF images.",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "index.cjs",
+    "index.mjs",
+    "index.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@wasm-tool/rollup-plugin-rust": "^1.0.5",
+    "rollup": "^2.26.10",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
