@@ -11,7 +11,7 @@ export default {
     {
       file: './index.cjs',
       format: 'cjs',
-      output: 'default'
+      exports: 'default'
     },
   ],
   plugins: [
