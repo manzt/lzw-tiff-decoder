@@ -1,4 +1,5 @@
 import rust from '@wasm-tool/rollup-plugin-rust';
+import { terser } from 'rollup-plugin-terser';
 
 /* tiny plugin to resolve `import.meta.url` to an empty string ("").
  *
@@ -30,5 +31,6 @@ export default {
   plugins: [
     rust({ inlineWasm: true }),
     resolveImportMetaEmpty(),
+    terser(),
   ],
 };
