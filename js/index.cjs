@@ -87,7 +87,7 @@ async function load(module, imports) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = (typeof document === 'undefined' ? new (require('u' + 'rl').URL)('file:' + __filename).href : (document.currentScript && document.currentScript.src || new URL('index.cjs', document.baseURI).href)).replace(/\.js$/, '_bg.wasm');
+        input = "".replace(/\.js$/, '_bg.wasm');
     }
     const imports = {};
 
