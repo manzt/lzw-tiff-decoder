@@ -17,16 +17,8 @@ const resolveImportMetaEmpty = () => ({
 export default {
   input: './src.js',
   output: [
-    {
-      file: './index.mjs',
-      format: 'es',
-      exports: 'default'
-    },
-    {
-      file: './index.cjs',
-      format: 'cjs',
-      exports: 'default'
-    },
+    { file: './index.mjs', format: 'es' },
+    { file: './index.cjs', format: 'cjs' },
   ],
   plugins: [
     rust({ inlineWasm: true }),
