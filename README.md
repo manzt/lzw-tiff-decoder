@@ -11,13 +11,12 @@ $ npm install lzw-tiff-decoder
 ## Usage
 
 ```javascript
-import LZWDecoder from 'lzw-tiff-decoder';
+import { decompress } from 'lzw-tiff-decoder';
 
 const compressedBytes = new Uint8Array(/* tile or strip from tiff */);
 const maxUncompressedSize = tileWidth * tileHeight * bitsPerSample / 8;
 
-const decoder = new LZWDecoder();
-const decoded = await decoder.decompress(compressedBytes, maxUncompressedSize);
+const decoded = await decompress(compressedBytes, maxUncompressedSize);
 ```
 
 ## Development

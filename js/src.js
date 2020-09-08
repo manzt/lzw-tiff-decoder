@@ -1,25 +1,14 @@
 import wasm from '../Cargo.toml';
 
-let decompress;
+let wasmModule;
+export async function decompress(src, max_uncompressed_size) {
+  if (!wasmModule) wasmModule = await wasm(); // only init wasm once
 
-class LZWDecoder {
+  const decoded = wasmModule.decompress(src, max_uncompressed_size);
 
-  async decompress(src, max_uncompressed_size) {
-
-    if (!decompress) {
-      // Only init wasm when needed
-      const mod = await wasm();
-      decompress = mod.decompress;
-    } 
-
-    const decoded = decompress(src, max_uncompressed_size);
-
-    if (decoded.length === 0) {
-      throw Error("Failed to decode with LZW decoder.")
-    }
-
-    return decoded;
+  if (decoded.length === 0) {
+    throw Error("Failed to decode with LZW decoder.")
   }
-}
 
-export default LZWDecoder;
+  return decoded;
+}

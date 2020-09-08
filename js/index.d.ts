@@ -1,3 +1,1 @@
-export default class LZWDecoder {
-  decompress(arr: Uint8Array, max_uncompressed_size: number): Promise<Uint8Array>;
-}
+export function decompress(arr: Uint8Array, max_uncompressed_size: number): Promise<Uint8Array>;
