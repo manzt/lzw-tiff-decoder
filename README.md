@@ -1,6 +1,8 @@
 ## `lzw-tiff-decoder`
+[![npm version](https://badge.fury.io/js/lzw-tiff-decoder.svg)](https://badge.fury.io/js/lzw-tiff-decoder)
 
-A WASM-based LZW decoder for tiff images... 
+A WASM-based LZW decoder for tiff images. Uses [`weezl`](https://github.com/image-rs/lzw), a 
+purely safe and dependency-less Rust crate providing LZW decoding.
 
 ## Installation
 
