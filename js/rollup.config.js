@@ -15,7 +15,7 @@ const resolveImportMetaEmpty = () => ({
 });
 
 export default {
-  input: './src.js',
+  input: './index.js',
   output: [
     { file: './index.mjs', format: 'es' },
     { file: './index.cjs', format: 'cjs' },
