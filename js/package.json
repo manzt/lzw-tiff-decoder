@@ -1,9 +1,10 @@
 {
   "name": "lzw-tiff-decoder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Trevor James Manz",
   "license": "MIT",
   "description": "WASM LZW decoder for TIFF images.",
+  "type": "module",
   "main": "index.cjs",
   "module": "index.mjs",
   "types": "index.d.ts",
