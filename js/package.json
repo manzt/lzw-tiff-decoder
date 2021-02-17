@@ -4,6 +4,7 @@
   "author": "Trevor James Manz",
   "license": "MIT",
   "description": "WASM LZW decoder for TIFF images.",
+  "type": "module",
   "main": "index.cjs",
   "module": "index.mjs",
   "types": "index.d.ts",
