@@ -14,12 +14,12 @@ pub fn decompress(compressed: &[u8], max_uncompressed_length: usize) -> Vec<u8> 
     let mut bytes_read = 0;
 
     // adapted from https://github.com/image-rs/image-tiff/blob/master/src/decoder/stream.rs#L248
-    while bytes_read < compressed.len() && uncompressed.len() < max_uncompressed_length {
+    while uncompressed.len() < max_uncompressed_length { 
         let bytes_written = uncompressed.len();
 
         // Resize vector only if needed
         uncompressed.reserve(1 << 12);
-        let buffer_space = uncompressed.capacity();
+        let buffer_space = uncompressed.capacity().min(max_uncompressed_length);
         // Initialize unwritten bytes with zeros
         uncompressed.resize(buffer_space, 0u8);
 
